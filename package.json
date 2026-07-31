@@ -1,0 +1,25 @@
+{
+  "name": "randomizer",
+  "version": "1.0.0",
+  "main": "randomizer.js",
+  "scripts": {
+    "start": "node randomizer.js",
+    "test": "node test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jason-saar/randomizer.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/jason-saar/randomizer/issues"
+  },
+  "homepage": "https://github.com/jason-saar/randomizer#readme",
+  "description": "",
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}
