@@ -43,12 +43,14 @@ app.post("/random/numbers", (req, res) => {
 app.post("/random/choice", (req, res) => {
     const { items, weights } = req.body;
 
+    // check that the array is not empty
     if (!Array.isArray(items) || items.length === 0) {
         return res.status(400).json({
             error: "items must be a non-empty array."
         });
     }
 
+    // check that the items in the array are all strings
     if (!items.every(item => typeof item === "string")) {
         return res.status(400).json({
             error: "every item must be a string."
@@ -61,12 +63,13 @@ app.post("/random/choice", (req, res) => {
         const randomIndex = Math.floor(Math.random() * items.length);
         selectedItem = items[randomIndex];
      } else {
+        // check that the weights array is the same length as the items array
         if (!Array.isArray(weights) || weights.length !== items.length) {
             return res.status(400).json({
                 error: "weights must be an array with the same length as items."
             });
         }
-
+        // check that all weights are positive integers
         if (!weights.every(weight => Number.isInteger(weight) && weight > 0)) {
             return res.status(400).json({
                 error: "all weights must be positive integers."
