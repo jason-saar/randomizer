@@ -98,5 +98,5 @@ app.post("/random/choice", (req, res) => {
 })
 
 app.listen(PORT, () =>{
-    console.log(`Name Generator is running on port ${PORT}`);
+    console.log(`Randomizer Microservice is running on port ${PORT}`);
 });
